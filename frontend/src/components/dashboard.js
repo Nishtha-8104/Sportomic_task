@@ -43,7 +43,7 @@ export default function Dashboard() {
 
   // Fetch dropdown options on mount
   useEffect(() => {
-    fetch("http://localhost:3001/api/filters")
+    fetch("https://sportomic-task1.onrender.com/api/filters")
       .then((res) => res.json())
       .then(setFilters);
   }, []);
@@ -70,7 +70,7 @@ useEffect(() => {
   if (selectedFilters.month !== "all")
     params.append("month", selectedFilters.month);
 
-  fetch(`http://localhost:3001/api/dashboard?${params.toString()}`)
+  fetch(`https://sportomic-task1.onrender.com/api/dashboard?${params.toString()}`)
     .then(res => res.json())
     .then(setData);
 
@@ -130,4 +130,5 @@ useEffect(() => {
     </div>
   );
 }
+
 
